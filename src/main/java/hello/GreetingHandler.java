@@ -13,11 +13,6 @@ public class GreetingHandler {
 
 	public Mono<ServerResponse> hello(ServerRequest request) {
 		return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
-			.body(BodyInserters.fromObject("Hello, Spring!"));
-	}
-	
-	public Mono<ServerResponse> hello1(ServerRequest request) {
-		return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
 			.body(BodyInserters.fromObject("Hello, World!"));
 	}
 	

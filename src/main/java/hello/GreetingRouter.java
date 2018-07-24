@@ -15,9 +15,8 @@ public class GreetingRouter {
 	public RouterFunction<ServerResponse> route(GreetingHandler greetingHandler) {
 
 		return RouterFunctions
-			.route(RequestPredicates.GET("/hello-spring").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello)
-			.andRoute(RequestPredicates.GET("/hello-world").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello1)
-			.andRoute(RequestPredicates.GET("/myname").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::myName);
+			.route(RequestPredicates.GET("/hello-world").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello)
+			.andRoute(RequestPredicates.GET("/hello").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::myName);
 
 	}
 }
