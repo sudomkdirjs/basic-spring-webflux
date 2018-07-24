@@ -15,12 +15,7 @@ public class GreetingRouter {
 	public RouterFunction<ServerResponse> route(GreetingHandler greetingHandler) {
 
 		return RouterFunctions
-			.route(RequestPredicates.GET("/hello-spring").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello);
-	}
-	@Bean
-	public RouterFunction<ServerResponse> route1(GreetingHandler greetingHandler) {
-
-		return RouterFunctions
-			.route(RequestPredicates.GET("/hello-world").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello1);
+			.route(RequestPredicates.GET("/hello-spring").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello)
+			.andRoute(RequestPredicates.GET("/hello-world").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), greetingHandler::hello1);
 	}
 }
