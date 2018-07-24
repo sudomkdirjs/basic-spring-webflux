@@ -11,5 +11,6 @@ public class Application {
 
 		GreetingWebClient gwc = new GreetingWebClient();
 		System.out.println(gwc.getResult());
+		System.out.println(gwc.getResult1());
 	}
 }
