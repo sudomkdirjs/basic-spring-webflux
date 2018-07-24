@@ -20,4 +20,10 @@ public class GreetingHandler {
 		return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
 			.body(BodyInserters.fromObject("Hello, World!"));
 	}
+	
+	public Mono<ServerResponse> myName(ServerRequest request) {
+		  String name = request.queryParam("name").get();
+		  return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
+		    .body(BodyInserters.fromObject("Hello, " + name + "!"));
+		 }
 }

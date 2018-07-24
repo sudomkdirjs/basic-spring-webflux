@@ -24,11 +24,33 @@ public class GreetingRouterTest {
 	public void testHello() {
 		webTestClient
 			// Create a GET request to test an endpoint
-			.get().uri("/hello")
+			.get().uri("/hello-spring")
 			.accept(MediaType.TEXT_PLAIN)
 			.exchange()
 			// and use the dedicated DSL to test assertions against the response
 			.expectStatus().isOk()
 			.expectBody(String.class).isEqualTo("Hello, Spring!");
+	}
+	
+	@Test
+	public void testHello1() {
+		webTestClient
+			// Create a GET request to test an endpoint
+			.get().uri("/hello-world")
+			.accept(MediaType.TEXT_PLAIN)
+			.exchange()
+			// and use the dedicated DSL to test assertions against the response
+			.expectStatus().isOk()
+			.expectBody(String.class).isEqualTo("Hello, World!");
+	}
+	
+	@Test
+	public void testMyName() {
+	  webTestClient
+	    .get().uri("/myname?name=Marees")
+	    .accept(MediaType.TEXT_PLAIN)
+	    .exchange()
+	    .expectStatus().isOk()
+	    .expectBody(String.class).isEqualTo("Hello, Marees!");
 	}
 }
